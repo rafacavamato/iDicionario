@@ -129,9 +129,9 @@ int contarLetra = 0;
  
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    contarLetra--;
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    contarLetra--;
+//}
 -(void)next:(id)sender {
      if (contarLetra == 24){
          [self.navigationController popToRootViewControllerAnimated:TRUE];
