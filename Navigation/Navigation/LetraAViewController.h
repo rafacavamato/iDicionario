@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LetraAViewController : UIViewController
-
++ (LetraAViewController*)sharedInstance;
 @end
