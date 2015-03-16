@@ -30,6 +30,10 @@
     
     [self.view addSubview:botao];
     
+    UILabel *letra = [[UILabel alloc]init];
+    
+    [letra setText:@"test"];
+    
  
 }
 
