@@ -10,4 +10,5 @@
 
 @interface LetraAViewController : UIViewController
 + (LetraAViewController*)sharedInstance;
+@property int contador;
 @end
