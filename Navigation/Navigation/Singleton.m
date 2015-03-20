@@ -7,40 +7,78 @@
 //
 
 #import "Singleton.h"
+#import "Objetos.h"
 
 @implementation Singleton
-@synthesize letra,palavra,foto,geral;
-static Singleton *SINGLETON = nil;
+@synthesize geral;
 
-static bool isFirstAccess = YES;
+-(id)init {
 
-+ (id)sharedInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        isFirstAccess = NO;
-        SINGLETON = [[super allocWithZone:NULL] init];
-    });
-    
-    return SINGLETON;
-}
+    Objetos * pA = [[Objetos alloc] initWithPalavra:@"Abacaxi" image:[UIImage imageNamed:@"abacaxi"]];
+    Objetos * pB = [[Objetos alloc] initWithPalavra:@"Bola" image:[UIImage imageNamed:@"bola"]];
+    Objetos * pC = [[Objetos alloc] initWithPalavra:@"Cabrito" image:[UIImage imageNamed:@"cabrito"]];
+    Objetos * pD = [[Objetos alloc] initWithPalavra:@"Dado" image:[UIImage imageNamed:@"dado"]];
+    Objetos * pE = [[Objetos alloc] initWithPalavra:@"Elefante" image:[UIImage imageNamed:@"elefante"]];
+    Objetos * pF = [[Objetos alloc] initWithPalavra:@"Faca" image:[UIImage imageNamed:@"faca"]];
+    Objetos * pG = [[Objetos alloc] initWithPalavra:@"Garrafa" image:[UIImage imageNamed:@"garrafa"]];
+    Objetos * pH = [[Objetos alloc] initWithPalavra:@"Helicoptero" image:[UIImage imageNamed:@"helicoptero"]];
+    Objetos * pI = [[Objetos alloc] initWithPalavra:@"Igreja" image:[UIImage imageNamed:@"igreja"]];
+    Objetos * pJ = [[Objetos alloc] initWithPalavra:@"Jaca" image:[UIImage imageNamed:@"jaca"]];
+    Objetos * pK = [[Objetos alloc] initWithPalavra:@"Kiwi" image:[UIImage imageNamed:@"kiwi"]];
+    Objetos * pL = [[Objetos alloc] initWithPalavra:@"Limao" image:[UIImage imageNamed:@"limao"]];
+    Objetos * pM = [[Objetos alloc] initWithPalavra:@"Macaco" image:[UIImage imageNamed:@"macaco"]];
+    Objetos * pN = [[Objetos alloc] initWithPalavra:@"Navio" image:[UIImage imageNamed:@"navio"]];
+    Objetos * pO = [[Objetos alloc] initWithPalavra:@"Ovo" image:[UIImage imageNamed:@"ovo"]];
+    Objetos * pP = [[Objetos alloc] initWithPalavra:@"Parque" image:[UIImage imageNamed:@"parque"]];
+    Objetos * pQ = [[Objetos alloc] initWithPalavra:@"Queijo" image:[UIImage imageNamed:@"queijo"]];
+    Objetos * pR = [[Objetos alloc] initWithPalavra:@"Rato" image:[UIImage imageNamed:@"rato"]];
+    Objetos * pS = [[Objetos alloc] initWithPalavra:@"Sapato" image:[UIImage imageNamed:@"sapato"]];
+    Objetos * pT = [[Objetos alloc] initWithPalavra:@"Tatu" image:[UIImage imageNamed:@"tatu"]];
+    Objetos * pU = [[Objetos alloc] initWithPalavra:@"Urso" image:[UIImage imageNamed:@"urso"]];
+    Objetos * pV = [[Objetos alloc] initWithPalavra:@"Vaca" image:[UIImage imageNamed:@"vaca"]];
+    Objetos * pX = [[Objetos alloc] initWithPalavra:@"Xicara" image:[UIImage imageNamed:@"xicara"]];
+    Objetos * pZ = [[Objetos alloc] initWithPalavra:@"Zebra" image:[UIImage imageNamed:@"zebra"]];
+                   
+                    
+    self = [super init];
 
--(NSMutableArray*)test{
-    
-    Objetos *objeto1 = [[Objetos alloc]init];
-    letra = [[NSArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"X",@"Z",nil];
-//    foto = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"a"],[UIImage imageNamed:@"b"],[UIImage imageNamed:@"c"],[UIImage imageNamed:@"d"],[UIImage imageNamed:@"e"],[UIImage imageNamed:@"f"],[UIImage imageNamed:@"g"],[UIImage imageNamed:@"h"],[UIImage imageNamed:@"i"],[UIImage imageNamed:@"j"],[UIImage imageNamed:@"k"],[UIImage imageNamed:@"l"],[UIImage imageNamed:@"m"],[UIImage imageNamed:@"n"],[UIImage imageNamed:@"o"],[UIImage imageNamed:@"p"],[UIImage imageNamed:@"q"],[UIImage imageNamed:@"r"],[UIImage imageNamed:@"s"],[UIImage imageNamed:@"t"],[UIImage imageNamed:@"u"],[UIImage imageNamed:@"v"],[UIImage imageNamed:@"x"],[UIImage imageNamed:@"z"],nil];
-    palavra = [[NSArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"X",@"Z",nil] ;
-    geral = [[NSMutableArray alloc]init];
-    
-    
-    for (int i = 0; i<[letra count]; i++){
-        
-        objeto1.palavra = palavra[i];
-        objeto1.letra = letra[i];
-//        objeto1.foto = foto[i];
-        [geral addObject:objeto1];
+                    
+    if (self) {
+        geral = [[NSMutableArray alloc]init];
+        [geral addObject:pA];
+        [geral addObject:pB];
+        [geral addObject:pC];
+        [geral addObject:pD];
+        [geral addObject:pE];
+        [geral addObject:pF];
+        [geral addObject:pG];
+        [geral addObject:pH];
+        [geral addObject:pI];
+        [geral addObject:pJ];
+        [geral addObject:pK];
+        [geral addObject:pL];
+        [geral addObject:pM];
+        [geral addObject:pN];
+        [geral addObject:pO];
+        [geral addObject:pP];
+        [geral addObject:pQ];
+        [geral addObject:pR];
+        [geral addObject:pS];
+        [geral addObject:pT];
+        [geral addObject:pU];
+        [geral addObject:pV];
+        [geral addObject:pX];
+        [geral addObject:pZ];
     }
-    return geral;
+    return self;
+}
++(id)getInstance{
+    static Singleton *instance = nil;
+    
+    if (instance == nil) {
+        instance = [[Singleton alloc]init];
+    }
+    return instance;
 }
 @end
+

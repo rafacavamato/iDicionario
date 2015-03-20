@@ -14,8 +14,9 @@
     NSString *palavra;
     UIImage *foto;
 }
-
 @property NSString *letra;
 @property NSString *palavra;
 @property UIImage *foto;
+
+-(id)initWithPalavra:(NSString*)pal image:(UIImage*)image;
 @end

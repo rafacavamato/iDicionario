@@ -11,15 +11,15 @@
 #import "Singleton.h"
 
 @implementation LetraAViewController
-
+int contador = 0;
 -(void) viewDidLoad {
-    int contador = 0;
+    
     [super viewDidLoad];
     
-    Singleton *s =[Singleton sharedInstance];
-     NSMutableArray * array = [s geral];
+   Singleton *s =[Singleton getInstance];
+   // NSMutableArray * array = [s geral];
     
-    [s test];
+   
     
    
     
@@ -35,8 +35,8 @@
     [self.view addSubview:botao];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 200, 100)];
-    
-    [label setText:[array objectAtIndex:contador]];
+    NSString *testerino = [[s.geral objectAtIndex:contador]palavra];
+    [label setText:testerino];
     label.center = self.view.center;
     [self.view addSubview:label];
     //botao back
@@ -48,7 +48,7 @@
                                             bundle:NULL];
     [self.navigationController pushViewController:proximo
                                          animated:YES];
-    _contador++;
+    contador++;
     
 }
 -(void)back:(id)sender {
@@ -57,7 +57,7 @@
                                      bundle:NULL];
     [self.navigationController pushViewController:proximo
                                          animated:YES];
-    _contador--;
+    contador--;
     
 }
 

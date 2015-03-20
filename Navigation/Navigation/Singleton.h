@@ -11,11 +11,8 @@
 
 @interface Singleton : NSObject
 
-@property NSArray * letra;
-@property NSArray * palavra;
-@property NSArray * foto;
 @property NSMutableArray * geral;
 
-+ (Singleton*)sharedInstance;
--(NSMutableArray*)test;
++ (id) getInstance;
+
 @end

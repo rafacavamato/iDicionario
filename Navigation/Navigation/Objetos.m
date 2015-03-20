@@ -10,4 +10,14 @@
 
 @implementation Objetos
 
+@synthesize palavra,foto,letra;
+-(id)initWithPalavra:(NSString*)pal image:(UIImage*)image{
+    
+      self = [super init];
+    if(self){
+        palavra = pal;
+        foto = image;
+    }
+    return self;
+}
 @end
