@@ -17,11 +17,11 @@ int contador = 0;
     [super viewDidLoad];
     
    Singleton *s =[Singleton getInstance];
-   // NSMutableArray * array = [s geral];
+
     
    
     
-   
+   //self.navigationItem.title = letra;
     
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
@@ -41,6 +41,12 @@ int contador = 0;
     [self.view addSubview:label];
     //botao back
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    
+    if (contador == 23) {
+        contador = -1;
+    }
+    
+    
 }
 -(void)next:(id)sender {
     LetraAViewController *proximo = [[LetraAViewController alloc]
@@ -49,6 +55,8 @@ int contador = 0;
     [self.navigationController pushViewController:proximo
                                          animated:YES];
     contador++;
+    
+    NSLog(@"%d",contador);
     
 }
 -(void)back:(id)sender {
